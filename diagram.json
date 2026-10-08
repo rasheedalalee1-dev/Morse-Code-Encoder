@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "ChatGPT",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -118.8, "left": 263, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzz1", "top": -80, "left": 430, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "dotBtn",
+      "top": 83,
+      "left": 355.2,
+      "attrs": { "color": "green", "label": "DOT" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "dashBtn",
+      "top": 180,
+      "left": 350,
+      "attrs": { "color": "blue", "label": "DASH" }
+    }
+  ],
+  "connections": [
+    [ "esp:2", "led1:A", "red", [] ],
+    [ "led1:C", "esp:GND.1", "black", [] ],
+    [ "esp:4", "buzz1:1", "red", [] ],
+    [ "buzz1:2", "esp:GND.1", "black", [] ],
+    [ "dotBtn:1.l", "esp:18", "green", [] ],
+    [ "dotBtn:2.r", "esp:GND.1", "black", [] ],
+    [ "dashBtn:1.l", "esp:19", "blue", [] ],
+    [ "dashBtn:2.r", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
